@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js" integrity="sha512-CMF3tQtjOoOJoOKlsS7/2loJlkyctwzSoDK/S40iAB+MqWSaf50uObGQSk5Ny/gfRhRCjNLvoxuCvdnERU4WGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Vite App</title>
+  </head>
+  <body>
+    <header class="navbar scroll-snap-x">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#pais">País</a>
+      </nav>
+    </header>
+    <div class="app scroll-snap-x">
+      <div id="home">
+        <div class="dashboard-container">
+          <div class="kpi-card">
+            <h4>Total confirmados</h4>
+            <span class="totalConfirmed"></span>
+          </div>
+          <div class="kpi-card">
+            <h4>Total Mortes</h4>
+            <span class="totalDeaths"></span>
+          </div>
+          <div class="kpi-card">
+            <h4>Total Recuperados</h4>
+            <span class="totalRecovered"></span>
+          </div>
+        </div>
+        <div class="dashboard-container">
+          <canvas id="chart-pie"></canvas>
+        </div>
+        <div class="countries-top-ten">
+          <canvas id="chart-bar"></canvas>
+        </div>
+      </div>
+      <div id="pais">
+        <div  class="filters-container">
+          <div class="filters">
+            <span>Filtros</span>
+            <hr>
+            <div class="filters-inputs">
+              <label for="date-started">Data Início</label>
+              <input type="date" id="date-started">
+              <label for="date-end">Data Fim</label>
+              <input type="date" id="date-end">
+              <label for="country">País</label>
+              <select name="country" id="country">
+                <option selected value="brazil">Brazil</option>
+              </select>
+              <label for="status">Dados</label>
+              <select name="status" id="status">
+                <option selected value="confirmed">Confirmados</option>
+                <option value="deaths">Mortes</option>
+                <option value="recovered">Recuperados</option>
+              </select>
+              <button id="filterCountry">Aplicar</button>
+            </div>
+          </div>
+          <div class="dashboard-line"></div>
+      </div>
+      </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

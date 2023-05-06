@@ -1,0 +1,166 @@
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #EEEEEE;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  padding: 1em;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1em;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+}
+.app {
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  block-size: 100%;
+}
+
+#home, #pais{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 1em;
+}
+
+.scroll-snap-x {
+  overflow: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+}
+
+#home, #pais {
+  scroll-snap-align: start;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+}
+
+.kpi-card {
+  background-color: #BBDEF0;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  width: 15em;
+}
+
+.dashboard-container {
+  background-color: white;
+  width: 45%;
+  height: 20em;
+  margin-top: 2em;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-line {
+  background-color: white;
+  margin-top: 2em;
+  padding: 1em;
+  width: 50%;
+}
+
+.filters {
+  background-color: white;
+  width: 45%;
+  height: 30em;
+  margin-top: 2em;
+  padding: 1em;
+}
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filters-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.filters-inputs > input {
+  width: 24em;
+}
+
+.filters-inputs > select {
+  width: 25em;
+}
+
+.filters-inputs > input, .filters-inputs > select {
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.filters-inputs > label {
+  font-weight: 600;
+}
+
+.countries-top-ten {
+  background-color: white;
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  width: 100%;
+  height: 25em;
+}
+
+.kpi-line {
+  display: flex;
+  gap: 4em;
+}
+
+#chart-pie {
+  width: 400px;
+  height: 400px;
+}
+
+#chart-bar {
+  width: 800px;
+  height: 350px;
+}
+
+@media (hover: none) {
+  .scroll-snap-x {
+      scrollbar-width:none
+  }
+
+  .scroll-snap-x::-webkit-scrollbar {
+      width: 0;
+      height: 0
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-snap-x {
+    scroll-behavior: smooth;
+  }
+}
